@@ -49,5 +49,7 @@ Wallets
 -------
 
 Windows = https://github.com/smookyguns/mst/blob/master/release/mustang-qt.zip
+
 MAC = soon
+
 Linux = soon
