@@ -3,15 +3,25 @@ MustangCoin Specs:
 ------------------
 
 nTargetSpacing = 1 * 60; // 60 seconds
+
 nStakeMinAge = 24 * 60 * 60; // 24 hours
+
 nStakeMaxAge = 30 * 24 * 60 * 60;           // 30 days
+
 nModifierInterval = 10 * 60; // time to elapse before new modifier is computed
+
 nCoinbaseMaturity = 40;
+
 DAILY_BLOCKCOUNT =  1440;
+
 MAX_BLOCK_SIZE = 2000000;
+
 MIN_TX_FEE = 100000;
+
 MAX_MONEY = 3000000 * COIN;
+
 COIN_YEAR_REWARD = 12 * CENT; // 12% per year
+
 MAX_MINT_PROOF_OF_STAKE = 0.12 * COIN;	// 12%
 
 
