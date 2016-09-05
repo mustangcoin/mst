@@ -44,5 +44,10 @@ server=1
 listen=1
 rpcallowip=127.0.0.1
 
+xxxxxxx
+Wallets
+-------
 
-xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Windows = https://github.com/smookyguns/mst/blob/master/release/mustang-qt.zip
+MAC = soon
+Linux = soon
