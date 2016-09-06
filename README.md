@@ -58,7 +58,7 @@ xxxxxxx
 Wallets
 -------
 
-Windows = https://github.com/smookyguns/mst/blob/master/release/mustang-qt.zip
+Windows = https://github.com/mustangcoin/mst/blob/master/release/mustang-qt.zip
 
 MAC = soon
 
