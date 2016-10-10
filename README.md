@@ -57,9 +57,4 @@ rpcallowip=127.0.0.1
 xxxxxxx
 Wallets
 -------
-
-Windows = https://github.com/mustangcoin/mst/blob/master/release/mustang-qt.zip
-
-MAC = soon
-
-Linux = soon
+http://mustangcoin.xyz/#services
