@@ -1,60 +1,59 @@
-xxxxxxxxxxxxxxxxxx
-MustangCoin Specs:
-------------------
+### Mustang Coin Official Development Repository
 
-nTargetSpacing = 1 * 60; // 60 seconds
+## Specifications
 
-nStakeMinAge = 24 * 60 * 60; // 24 hours
+- Blockchain Name: Mustang Coin
+- Ticker: MST
+- PoW Algorithm: X11
+- Name: Mustang Coin
+- Short Name: MST
+- Type: Hybrid to full PoS
+- nStakeMinAge = 24 * 60 * 60; // 24 hours
+- nStakeMaxAge = 30 * 24 * 60 * 60; // 30 days
+- Coin supply: 3000000 MST
+- Premine: None
 
-nStakeMaxAge = 30 * 24 * 60 * 60;           // 30 days
+## Chain Parameters:
 
-nModifierInterval = 10 * 60; // time to elapse before new modifier is computed
+- nTargetSpacing = 1 * 60;
+- nModifierInterval = 10 * 60;
+- nCoinbaseMaturity = 40;
+- DAILY_BLOCKCOUNT = 1440;
+- MAX_BLOCK_SIZE = 2000000;
+- MIN_TX_FEE = 100000;
+- (Last POW block: 17280)
+- nSubsidy = nCoinAge * nRewardCoinYear / 365 / COIN;
 
-nCoinbaseMaturity = 40;
+## Sample mustang.conf file:
 
-DAILY_BLOCKCOUNT =  1440;
+- rpcuser=UserName
+- rpcpassword=YourSaltishPassworld
+- rpcport=10193
+- port=10194
+- daemon=1
+- server=1
+- listen=1
+- rpcallowip=127.0.0.1
+- addnode=216.189.153.5
 
-MAX_BLOCK_SIZE = 2000000;
+## Wallets:
 
-MIN_TX_FEE = 100000;
+- http://mustangcoin.xyz/#services
 
-MAX_MONEY = 3000000 * COIN;
+## Shop:
 
-COIN_YEAR_REWARD = 12 * CENT; // 12% per year
+- http://mustangcoin.xyz/#shop
 
-MAX_MINT_PROOF_OF_STAKE = 0.12 * COIN;	// 12%
+## Social Contacts:
 
+- http://mustangcoin.xyz/
+- https://twitter.com/mustangcoin
+- https://bitcointalk.org/index.php?topic=1609008.0
 
-nSubsidy = nCoinAge * nRewardCoinYear / 365 / COIN;
+## Repo Guidelines
 
-nHeight+1 >= 0 && pindexBest->nHeight+1 <= 100)
-nSubsidy = 0 * COIN;
-
-nHeight+1 >= 101 && pindexBest->nHeight+1 <= 721)
-nSubsidy = 333 * COIN;
-
-nHeight+1 >= 722 && pindexBest->nHeight+1 <= 1440)
-nSubsidy = 133 * COIN;
-
-nHeight+1 >= 1441 && pindexBest->nHeight+1 <= 17280)
-nSubsidy = 23 * COIN;
-
-xxxxxxxxxxxxxxxxxxxxxxxxx
-Sample mustang.conf file:
--------------------------
-
-rpcuser=UserName
-rpcpassword=YourSaltishPassworld 
-
-rpcport=10193
-port=10194
-
-daemon=1
-server=1
-listen=1
-rpcallowip=127.0.0.1
-
-xxxxxxx
-Wallets
--------
-http://mustangcoin.xyz/#services
+- Developers work in their own forks, then submit pull requests when they think their feature or bug fix is ready.
+- If it is a simple/trivial/non-controversial change, then one of the development team members simply pulls it.
+- If it is a more complicated or potentially controversial change, then the change may be discussed in the pull request, or the        requester may be asked to start a discussion for a broader community discussion.
+- The patch will be accepted if there is broad consensus that it is a good thing. Developers should expect to rework and resubmit patches if they don't match the project's coding conventions or are controversial.
+- From time to time a pull request will become outdated. If this occurs, and the pull is no longer automatically mergeable; a comment on the pull will be used to issue a warning of closure. Pull requests closed in this manner will have their corresponding issue labeled 'stagnant'.
