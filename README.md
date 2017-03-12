@@ -28,8 +28,8 @@
 
 - rpcuser=UserName
 - rpcpassword=YourSaltishPassworld
-- rpcport=10193
-- port=10194
+- rpcport=19666
+- port=19668
 - daemon=1
 - server=1
 - listen=1
