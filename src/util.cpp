@@ -61,10 +61,6 @@ namespace boost {
 
 
 using namespace std;
-static const char alphanum[] =
-       "0123456789"
-       "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-       "abcdefghijklmnopqrstuvwxyz";
 
 map<string, string> mapArgs;
 map<string, vector<string> > mapMultiArgs;
@@ -1084,49 +1080,9 @@ boost::filesystem::path GetConfigFile()
 void ReadConfigFile(map<string, string>& mapSettingsRet,
                     map<string, vector<string> >& mapMultiSettingsRet)
 {
-    int confLoop = 0;
-    injectConfig:
     boost::filesystem::ifstream streamConfig(GetConfigFile());
     if (!streamConfig.good())
-
-   {
-        boost::filesystem::path ConfPath;
-                ConfPath = GetDefaultDataDir() / "mustang.conf";
-                FILE* ConfFile = fopen(ConfPath.string().c_str(), "w");
-                fprintf(ConfFile, "listen=1\n");
-                fprintf(ConfFile, "server=1\n");
-                fprintf(ConfFile, "maxconnections=100\n");
-                fprintf(ConfFile, "rpcuser=UserName\n");
- 
-                char s[26];
-                for (int i = 0; i < 26; ++i)
-                {
-                    s[i] = alphanum[rand() % (sizeof(alphanum) - 1)];
-                }
- 
-                std::string str(s);
-                std::string rpcpass = "rpcpassword=" + str + "\n";
-                fprintf(ConfFile, rpcpass.c_str());
-                fprintf(ConfFile, "port=19668\n");
-                fprintf(ConfFile, "rpcport=19666\n");
-                fprintf(ConfFile, "rpcconnect=127.0.0.1\n");
-                fprintf(ConfFile, "rpcallowip=127.0.0.1\n");
-                fprintf(ConfFile, "addnode=2a01:4f8:201:1326::2\n");
-                fprintf(ConfFile, "addnode=144.76.237.39\n");
-                fprintf(ConfFile, "addnode=104.172.24.79\n");
- 
-                fclose(ConfFile);
- 
-                // Returns our config path, created config file is NOT loaded first time...
-                // Wallet will need to be reloaded before config file is properly read...
-               return ;
- 
-                if (confLoop < 1)
-               {
-                ++confLoop;
-                goto injectConfig;
-                }
-     }        
+        return; // No bitcoin.conf file is OK
 
     set<string> setOptions;
     setOptions.insert("*");
