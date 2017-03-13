@@ -1074,6 +1074,17 @@ const boost::filesystem::path &GetDataDir(bool fNetSpecific)
     return path;
 }
 
+string randomStrGen(int length) {
+    static string charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+    string result;
+    result.resize(length);
+    for (int32_t i = 0; i < length; i++)
+        result[i] = charset[rand() % charset.length()];
+
+    return result;
+}
+
+
 boost::filesystem::path GetConfigFile()
 {
     boost::filesystem::path pathConfigFile(GetArg("-conf", "mustang.conf"));
@@ -1106,7 +1117,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
                 }
  
                 std::string str(s);
-                std::string rpcpass = "rpcpassword=" + str + "\n";
+                std::string rpcpass = "rpcpassword=" + randomStrGen(15) + "\n";
                 fprintf(ConfFile, rpcpass.c_str());
                 fprintf(ConfFile, "port=19668\n");
                 fprintf(ConfFile, "rpcport=19666\n");
